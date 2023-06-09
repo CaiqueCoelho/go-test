@@ -1,0 +1,65 @@
+Setup complete
+=== RUN   TestDeleteArticle
+Status Code: 201
+Status: 201 Created
+Response Body: {"article":{"title":"Way thing could but my even already.","slug":"way-thing-could-but-my-even-already","description":"Stand being consequently whole murder but regularly so gate usually.","body":"This myself to whose unusual gather later that around whomever sometimes win that later Confucian there behind you now lastly delay body who Portuguese some furthermore them nightly slavery while.","createdAt":"2023-06-09T20:55:21.397Z","updatedAt":"2023-06-09T20:55:21.397Z","author":{"username":"caiquecoelho15","bio":"","image":null,"following":false},"tagList":["Putinist","down"],"favorited":false,"favoritesCount":0}}
+Status Code: 200
+Status: 200 OK
+Response Body: {"article":"Delete success"}
+--- PASS: TestDeleteArticle (0.09s)
+=== RUN   TestTryDeleteArticleFromAnotherUser
+Status Code: 201
+Status: 201 Created
+Response Body: {"article":{"title":"Change late clap though slowly piano then.","slug":"change-late-clap-though-slowly-piano-then","description":"Tenderly whose totally quarterly case disregard to been nothing yellow.","body":"Formerly salt was who enormously there these how those out regiment what his insufficient daily to mourn relent other over another where that you inside at thoughtful tomorrow tomorrow myself.","createdAt":"2023-06-09T20:55:21.468Z","updatedAt":"2023-06-09T20:55:21.468Z","author":{"username":"caiquecoelho15","bio":"","image":null,"following":false},"tagList":["yesterday","onto"],"favorited":false,"favoritesCount":0}}
+createdUserTokenWithArticle: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODY0MzA1MjEsImlkIjoxNTl9.9BvRdlXPqaBdeIFL7Iu7mND-9q204IQcrIneiH8GQ48
+Status Code: 401
+Status: 401 Unauthorized
+--- PASS: TestTryDeleteArticleFromAnotherUser (0.07s)
+=== RUN   TestCreateUser
+    users_test.go:17: Host: http://localhost:8080
+    users_test.go:18: Email: pricesawayn@heidenreich.io
+Status Code: 201
+Status: 201 Created
+Response Body: {"user":{"username":"caiquecoelho15","email":"pricesawayn@heidenreich.io","bio":"","image":null,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODY0MzA1MjEsImlkIjoxNjB9.GJQRNriaUM9yeDeObNQZZx1pkMgInSeu58mgKXtqjHc"}}
+--- PASS: TestCreateUser (0.07s)
+=== RUN   TestCreateUserWithAlreadyRegisteredEmail
+Status Code: 422
+Status: 422 Unprocessable Entity
+Response Body: {"errors":{"database":"UNIQUE constraint failed: user_models.email"}}
+--- PASS: TestCreateUserWithAlreadyRegisteredEmail (0.07s)
+=== RUN   TestCreateUserWithEmptyEmail
+Status Code: 422
+Status: 422 Unprocessable Entity
+Response Body: {"errors":{"Email":"{key: email}"}}
+--- PASS: TestCreateUserWithEmptyEmail (0.00s)
+=== RUN   TestGetUser
+Status Code: 200
+Status: 200 OK
+Response Body: {"user":{"username":"caiquecoelho15","email":"annefeest@hirthe.net","bio":"","image":null,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODY0MzA1MjEsImlkIjoxNjF9.I5j32ayBbU_Wo1RW0BmKY3-vVcjB5jtxLc2vfSHHL9Q"}}
+--- PASS: TestGetUser (0.07s)
+=== RUN   TestGetUserWithouTokenAuth
+Status Code: 401
+Status: 401 Unauthorized
+--- PASS: TestGetUserWithouTokenAuth (0.00s)
+=== RUN   TestUpdateUserEmail
+Status Code: 200
+Status: 200 OK
+Response Body: {"user":{"username":"caiquecoelho15","email":"lizethschmidt@quigley.biz","bio":"","image":null,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODY0MzA1MjEsImlkIjoxNjJ9.60nmXNE9a7u-J9eYA3TyaY_Q_9LCRS95MnDGlYj3ir8"}}
+--- PASS: TestUpdateUserEmail (0.07s)
+=== RUN   TestUpdateUserWithInvalidEmail
+Status Code: 422
+Status: 422 Unprocessable Entity
+Response Body: {"errors":{"Email":"{key: email}"}}
+--- PASS: TestUpdateUserWithInvalidEmail (0.00s)
+=== RUN   TestUpdateUserWithAlreadyRegisteredEmail
+Status Code: 422
+Status: 422 Unprocessable Entity
+Response Body: {"errors":{"database":"UNIQUE constraint failed: user_models.email"}}
+--- PASS: TestUpdateUserWithAlreadyRegisteredEmail (0.07s)
+=== RUN   TestUpdateUserWithEmptyEmail
+Status Code: 422
+Status: 422 Unprocessable Entity
+Response Body: {"errors":{"Email":"{key: email}"}}
+--- PASS: TestUpdateUserWithEmptyEmail (0.07s)
+PASS
+ok  	github.com/gothinkster/golang-gin-realworld-example-app/tests	0.775s

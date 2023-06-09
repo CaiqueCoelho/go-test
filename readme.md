@@ -78,8 +78,6 @@ We can also execute the tests manually by the workflow dispatch in the following
 
 https://github.com/CaiqueCoelho/go-test/actions/workflows/api-tests.yml
 
-![Captura de Tela 2023-06-09 às 17.10.39.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7f5d888c-ea36-4dca-93a7-bd035e80a084/Captura_de_Tela_2023-06-09_as_17.10.39.png)
-
 You can the result of the tests https://github.com/CaiqueCoelho/go-test/actions/runs/5225995752/jobs/9436167002
 
 And the JSON report in the following link https://github.com/CaiqueCoelho/go-test/suites/13502035308/artifacts/741815992

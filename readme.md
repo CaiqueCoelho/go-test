@@ -52,3 +52,19 @@ From the /tests path run:
 ```
 go test -v
 ```
+
+## Troubleshooting
+
+- Undefined validation function 'exists' on field 'Username'
+  If you get this error you should try downgrade to gin-gonic/gin@v1.4.0 using:
+
+```
+go get github.com/gin-gonic/gin@v1.4.0
+```
+
+Then build and execute the project like:
+
+```
+go build
+./golang-gin-realworld-example-app
+```

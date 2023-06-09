@@ -31,3 +31,15 @@ jobs:
         run: |
           sleep 10 # Optional: Add a delay if the application needs time to start
           go test -v
+
+      - name: Run tests
+        working-directory: tests
+        run: |
+          go get github.com/sectioneight/go-test-report
+          go test -json | go-test-report -o my-test-report.html
+
+      - name: Upload test report
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-report
+          path: my-test-report.html

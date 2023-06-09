@@ -70,7 +70,7 @@ func TestDeleteArticle(t *testing.T) {
 
 	// Initialize TagList as an empty slice in the struct
 	payloadGetArticle := ArticleResponse{}
-    err = json.NewDecoder(bytes.NewReader(bodyGetArticle)).Decode(&payload)
+    err = json.NewDecoder(bytes.NewReader(bodyGetArticle)).Decode(&payloadGetArticle)
 	if err != nil {
 		fmt.Println("Error decoding JSON: ", err) 
 		fmt.Println(" Variable: ", payload)

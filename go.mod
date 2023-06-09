@@ -22,6 +22,7 @@ require (
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/pelletier/go-toml/v2 v2.0.3 // indirect
 	github.com/rs/zerolog v1.29.1 // indirect
+	github.com/sectioneight/go-junit-report v0.0.0-20161108021230-650343681319 // indirect
 	github.com/spf13/cobra v1.7.0 // indirect
 	github.com/stretchr/testify v1.8.0
 	github.com/ugorji/go v1.2.7 // indirect

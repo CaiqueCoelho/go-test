@@ -35,11 +35,10 @@ jobs:
       - name: Run report
         working-directory: tests
         run: |
-          go get -u github.com/vakenbolt/go-test-report
-          go test -json | go-test-report -o my-test-report.html
+          go test -json ./... > test-report.json
 
       - name: Upload test report
         uses: actions/upload-artifact@v2
         with:
           name: test-report
-          path: my-test-report.html
+          path: tests/test-report.json

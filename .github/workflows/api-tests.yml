@@ -32,10 +32,10 @@ jobs:
           sleep 10 # Optional: Add a delay if the application needs time to start
           go test -v
 
-      - name: Run tests
+      - name: Run report
         working-directory: tests
         run: |
-          go get github.com/sectioneight/go-test-report
+          go get -u github.com/vakenbolt/go-test-report
           go test -json | go-test-report -o my-test-report.html
 
       - name: Upload test report
